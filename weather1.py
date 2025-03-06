@@ -9,11 +9,11 @@ BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 st.title("🌤️ 실시간 날씨 조회")
 
 # 사용자 입력 (도시 이름)
-city = st.text_input("도시 이름을 입력하세요:")
+city = st.text_input("도시 이름을 영어로 입력하세요:")
 
 if st.button("날씨 조회"):
     if not city:
-        st.error("도시 이름을 입력하세요!")
+        st.error("도시 이름을 영어로 입력하세요!")
     else:
         params = {"q": city, "appid": API_KEY, "units": "metric", "lang": "kr"}
         response = requests.get(BASE_URL, params=params)
